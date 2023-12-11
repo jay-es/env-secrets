@@ -8,5 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: Production
     steps:
-      - run: echo ENV_NAME "${{secrets.ENV_NAME}}" | sed 's/./& /g'
-      - run: echo PRODUCTION_VALUE "${{secrets.PRODUCTION_VALUE}}" | sed 's/./& /g'
+      - name: ENV_NAME
+        run: echo "${{secrets.ENV_NAME}}" | sed 's/./& /g'
+      - name: PRODUCTION_VALUE
+        run: echo "${{secrets.PRODUCTION_VALUE}}" | sed 's/./& /g'
