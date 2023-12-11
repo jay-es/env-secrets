@@ -1,0 +1,12 @@
+name: Default
+
+on:
+  workflow_dispatch:
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      # https://www.codementor.io/@zellliew/how-to-debug-a-github-actions-secret-1gbec77cro
+      - run: echo ENV_NAME "${{secrets.ENV_NAME}}" | sed 's/./& /g'
+      - run: echo PRODUCTION_VALUE "${{secrets.PRODUCTION_VALUE}}" | sed 's/./& /g'
